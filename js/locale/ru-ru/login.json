@@ -1,0 +1,11 @@
+{
+  "title": "login",
+  "content": {
+    "login_title": "Innlogging",
+    "login_email_placeholder": "E-post",
+    "login_password_placeholder": "Passord",
+    "login_button_text": "Logg inn",
+    "login_not_a_member_text": "Ikke medlem?",
+    "login_sign_up": "Opprett bruker"
+  }
+}

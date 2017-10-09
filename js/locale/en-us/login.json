@@ -1,0 +1,11 @@
+{
+  "title": "login",
+  "content": {
+    "login_title": "Login",
+    "login_email_placeholder": "E-mail",
+    "login_password_placeholder": "Password",
+    "login_button_text": "Login",
+    "login_not_a_member_text": "Not a member?",
+    "login_sign_up": "Sign up"
+  }
+}

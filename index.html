@@ -11,7 +11,7 @@
     <ul>
         <li id="fileMenuItem" name="File"><a href="#">File</a>
             <ul>
-                <li onclick="newTab()" id="newTabMenuItem" name="New tab"><a href="#">New tab</a></li>
+                <li onclick="newTab()" id="newTabMenuItem" name="New tab" data-l11n><a href="#">New tab</a></li>
                 <li onclick="openNewTab()" id="openNewTabMenuItem" name="Open"><a href="#">Open</a></li>
                 <li onclick="save()" id="saveMenuItem" name="Save"><a href="#">Save</a></li>
                 <li onclick="saveAs()" id="saveAsMenuItem" name="Save as..."><a href="#">Save as...</a></li>
@@ -38,7 +38,10 @@
         <li id="propertiesMenuItem" name="Properties"><a href="#">Properties</a></li>
         <li id="preferencesMenuItem" name="Preferences"><a href="#">Preferences</a>
             <ul>
-                <li id="languageMenuItem" value="Language"><a href="#">Language</a></li>
+                <li id="languageMenuItem" value="Language"><a href="#">Language</a>
+                    <li id="ru" value="ru"><a href="#">Russian</a></li>
+                    <li id="en" value="en"><a href="#">English</a></li>
+                </li>
                 <li id="skinMenuItem" value="Skin"><a href="#">Skin</a></li>
             </ul>
         </li>

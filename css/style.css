@@ -1,3 +1,25 @@
+/* extra CSS rules for i18n */
+[data-l11n=ru] {
+	display: none;
+}
+
+:lang(ru) > [data-l11n] {
+	display: none;
+}
+
+:lang(ru) > [data-l11n=ru] {
+	display: inline;
+}
+
+/* page CSS not related to i18n */
+* {
+	padding: 0;
+	margin: 0;
+}
+
+
+
+
 nav ul ul {
 	display: none;
 }
