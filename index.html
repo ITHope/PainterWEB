@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Painter WEB</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li id="fileMenuItem" name="File"><a href="#">File</a>
+            <ul>
+                <li onclick="newTab()" id="newTabMenuItem" name="New tab"><a href="#">New tab</a></li>
+                <li onclick="openNewTab()" id="openNewTabMenuItem" name="Open"><a href="#">Open</a></li>
+                <li onclick="save()" id="saveMenuItem" name="Save"><a href="#">Save</a></li>
+                <li onclick="saveAs()" id="saveAsMenuItem" name="Save as..."><a href="#">Save as...</a></li>
+                <li onclick="closeTab()" id="closeTabMenuItem" name="Close tab"><a href="#">Close tab</a></li>
+                <li onclick="renameTab()" id="renameTabMenuItem" name="Rename tab"><a href="#">Rename tab</a></li>
+                <li onclick="openCloud()" id="openCloudMenuItem" name="Open from cloud"><a href="#">Open from cloud</a></li>
+                <li onclick="saveCloud()" id="saveCloudMenuItem" name="Save in cloud"><a href="#">Save in cloud</a></li>
+                <li onclick="exit()" id="exitMenuItem" name="Exit"><a href="#">Exit</a></li>
+            </ul>
+        </li>
+        <li id="viewMenuItem" name="View"><a href="#">View</a>
+            <ul>
+                <li onclick="showElements()" id="showElementsMenuItem" value="Elements"><a href="#">Elements</a></li>
+                <li onclick="showProperties()" id="showPropertiesMenuItem" value="Properties"><a href="#">Properties</a></li>
+            </ul>
+        </li>
+        <li id="pluginsMenuItem" name="Plugins"><a href="#">Plugins</a>
+            <ul>
+                <li id="formatsMenuItem" value="Formats"><a href="#">Formats</a></li>
+                <li id="elementsMenuItem" value="Elements"><a href="#">Elements</a></li>
+            </ul>
+        </li>
+        <li id="tabsMenuItem" name="Tabs"><a href="#">Tabs</a></li>
+        <li id="propertiesMenuItem" name="Properties"><a href="#">Properties</a></li>
+        <li id="preferencesMenuItem" name="Preferences"><a href="#">Preferences</a>
+            <ul>
+                <li id="languageMenuItem" value="Language"><a href="#">Language</a></li>
+                <li id="skinMenuItem" value="Skin"><a href="#">Skin</a></li>
+            </ul>
+        </li>
+        <li id="helpMenuItem" name="Help"><a href="#">Help</a>
+            <ul>
+                <li onclick="showAbout()" id="showAboutMenuItem" value="About Painter"><a href="#">About Painter</a></li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+<div id="user-toolbar-options">
+    <a href="#"><button class="icon-user" onclick="newTab()" id="newTabToolbarItem" value="New">New</button></a>
+    <a href="#"><button class="icon-star" onclick="openNewTab()" id="openNewTabToolbarItem" value="Open">Open</button></a>
+    <a href="#"><button class="icon-edit" onclick="save()" id="saveToolbarItem" value="Save">Save</button></a>
+    <a href="#"><button class="icon-delete" onclick="openCloud()" id="openCloudToolbarItem" value="Load from cloud">Load from cloud</button></a>
+    <a href="#"><button class="icon-ban" onclick="saveCloud()" id="saveCloudToolbarItem" value="Save in cloud">Save in cloud</button></a>
+    <a href="#"><button class="icon-ban" onclick="paintType()" id="paintTypeToolbarItem" value="Paint Type">Paint Type</button></a>
+    <a href="#"><button class="icon-ban" onclick="lineWidth()" id="lineWidthToolbarItem" value="Line width">Line width</button></a>
+    <a href="#"><button class="icon-ban" onclick="color()" id="colorToolbarItem" value="Paint color">Paint color</button></a>
+</div>
+
+
+<div id="Elements" class="elements">
+    <button href="#" class="elementsBtn" onclick="emptyFigure()">Empty figure</button>
+</div>
+
+
+<div id="Properties" class="prop">
+    <fieldset>
+
+        <legend>Figure:</legend>
+        <br>
+        <button href="#" class="propBtn" onclick="color()" id="colorToolboxItem" value="Color">Color</button>
+
+        <input type="radio"  class="propRadio" name="type" value="Line">Line<br>
+        <input type="radio"  class="propRadio" name="type" value="Rectangle">Rectangle<br>
+        <input type="radio"  class="propRadio" name="type" value="Ellipse">Ellipse<br>
+        <input type="radio"  class="propRadio" name="type" value="Rounded Rectangle">Rounded Rectangle<br>
+        <br>
+        <label style="float:right">Line width:</label><br>
+        <select style="float:right; width:70px">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+    </fieldset>
+
+</div>
+
+
+<div class="tab">
+    <button class="tablinks" onClick="openTab(event, 'Paint 1')">Tab 1</button>
+    <button class="tablinks" onClick="openTab(event, 'Paint 2')">Tab 2</button>
+    <button class="tablinks" onClick="openTab(event, 'Paint 3')">Tab 3</button>
+</div>
+
+<div id="Paint 1" class="tabcontent">
+    <h3>Paint 1</h3>
+    <div id="pDraw">
+    <canvas id="canField" width="1300" height="650" style="width: 500; height: 300; border: 1px solid"/>
+	</div>
+	<div id="pWidth">
+    <p>
+        <input type="button" onclick="SetThickness(this)" value="x1">
+        <input type="button" onclick="SetThickness(this)" value="x2">
+        <input type="button" onclick="SetThickness(this)" value="x3">
+    </p>
+	</div>
+	<div id="pColor">
+    <p>
+        <input type="button" onclick="SetColor(this)" style="background:green">
+        <input type="button" onclick="SetColor(this)" style="background:red">
+        <input type="button" onclick="SetColor(this)" style="background:blue">
+    </p>
+	</div>
+</div>
+
+<div id="Paint 2" class="tabcontent">
+    <h3>Paint 2</h3>
+    <div id="pDraw">
+    <canvas id="canField" width="1300" height="650" style="width: 500; height: 300; border: 1px solid"/>
+	</div>
+	<div id="pWidth">
+    <p>
+        <input type="button" onclick="SetThickness(this)" value="x1">
+        <input type="button" onclick="SetThickness(this)" value="x2">
+        <input type="button" onclick="SetThickness(this)" value="x3">
+    </p>
+	</div>
+	<div id="pColor">
+    <p>
+        <input type="button" onclick="SetColor(this)" style="background:green">
+        <input type="button" onclick="SetColor(this)" style="background:red">
+        <input type="button" onclick="SetColor(this)" style="background:blue">
+    </p>
+	</div>
+</div>
+
+<div id="Paint 3" class="tabcontent">
+    <h3>Paint 3</h3>
+    <div id="pDraw">
+    <canvas id="canField" width="1300" height="650" style="width: 500; height: 300; border: 1px solid"/>
+	</div>
+	<div id="pWidth">
+    <p>
+        <input type="button" onclick="SetThickness(this)" value="x1">
+        <input type="button" onclick="SetThickness(this)" value="x2">
+        <input type="button" onclick="SetThickness(this)" value="x3">
+    </p>
+	</div>
+	<div id="pColor">
+    <p>
+        <input type="button" onclick="SetColor(this)" style="background:green">
+        <input type="button" onclick="SetColor(this)" style="background:red">
+        <input type="button" onclick="SetColor(this)" style="background:blue">
+    </p>
+	</div>
+</div>
+
+
+
+
+<script src="js/menu.js"></script>
+<script src="js/Draw.js" ></script>
+<script src="js/Color.js" ></script>
+<script src="js/Width.js" ></script>
+
+</body>
+</html>
